@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <div class="card">
+            <div class="card-body">
+                <a href="/" th:href="@{/}">Return To Books</a>
+                </br>
+                <strong>Title:</strong>
+                <ul th:each="title : ${book.getTitle()}">
+                    <li th:text="${title}"></li>
+                </ul>
+                <strong>Author:</strong>
+                <ul th:each="author : ${book.getAuthor()}">
+                    <li th:text="${author}"></li>
+                </ul>
+                <strong>Description:</strong>
+                <ul th:each="description : ${book.getDescription()}">
+                    <li th:text="${description}"></li>
+                </ul>
+                <strong>Page Count:</strong>
+                <ul th:each="pages : ${book.getNumOfPages()}">
+                    <li th:text="${pages}"></li>
+                </ul>
+            </div>
+          </div>
+    </body>
+</html>
