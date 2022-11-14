@@ -8,19 +8,23 @@
                 <ul th:each="title : ${book.getTitle()}">
                     <li th:text="${title}"></li>
                 </ul>
-                <strong>Author:</strong>
-                <ul th:each="author : ${book.getAuthor()}">
-                    <li th:text="${author}"></li>
-                </ul>
-                <strong>Description:</strong>
-                <ul th:each="description : ${book.getDescription()}">
-                    <li th:text="${description}"></li>
-                </ul>
-                <strong>Page Count:</strong>
-                <ul th:each="pages : ${book.getNumOfPages()}">
-                    <li th:text="${pages}"></li>
-                </ul>
+                <div class="card-subtitle text-muted">
+                    Pages: <span th:text="${book.getNumOfPages()}"></span>
+                </div>
+
+                <br />
+
+                <div class="card-text">
+                    <p>
+                        <strong>Description:</strong> <br /><span th:text="${book.getDescription()}"></span>
+                    </p>
+                    <strong>Web Link:</strong>
+                    <p>
+                        <a href="#" target="_blank" th:href="${book.getInfoUrl()}" th:text="${book.getInfoUrl()}"></a>
+                    </p>
+                </div>
             </div>
           </div>
+          <div th:insert="~{fragments/scriptFooter :: scriptFooter}"></div>
     </body>
 </html>

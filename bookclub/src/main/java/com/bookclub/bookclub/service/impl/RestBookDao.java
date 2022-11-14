@@ -16,15 +16,13 @@ import java.util.List;
 
 
 public class RestBookDao implements BookDao{
-    public RestBookDao() {}
+    public RestBookDao() {  }
 
     @Override
-    public List<book> list() {
-        String isbnString = "ISBN:9780593099322,9780261102361,9780261102378,9780590302715,9780316769532";
+    public List<book> list(String key) {
+        Object doc = getBooksDoc(key);
 
-        Object doc = getBooksDoc(isbnString);
-
-        List<book> books = new ArrayList<book>();
+        List<book> books = new ArrayList<>();
 
         List<String> titles = JsonPath.read(doc, "$..title");
         List<String> isbns = JsonPath.read(doc, "$..bib_key");
@@ -36,7 +34,7 @@ public class RestBookDao implements BookDao{
 
         return books;
     }
-       
+
     @Override
     public book find(String key) {
         Object doc = getBooksDoc(key);
@@ -83,5 +81,4 @@ public class RestBookDao implements BookDao{
 
         return Configuration.defaultConfiguration().jsonProvider().parse(jsonBooklist);
     }
-    
 }
