@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <div class="card">
+            <div class="card-body">
+                <a href="/" th:href="@{/}">Return To Books</a>
+                </br>
+                <strong>Title:</strong>
+                <ul th:each="title : ${book.getTitle()}">
+                    <li th:text="${title}"></li>
+                </ul>
+                <div class="card-subtitle text-muted">
+                    Pages: <span th:text="${book.getNumOfPages()}"></span>
+                </div>
+
+                <br />
+
+                <div class="card-text">
+                    <p>
+                        <strong>Description:</strong> <br /><span th:text="${book.getDescription()}"></span>
+                    </p>
+                    <strong>Web Link:</strong>
+                    <p>
+                        <a href="#" target="_blank" th:href="${book.getInfoUrl()}" th:text="${book.getInfoUrl()}"></a>
+                    </p>
+                </div>
+            </div>
+          </div>
+          <div th:insert="~{fragments/scriptFooter :: scriptFooter}"></div>
+    </body>
+</html>

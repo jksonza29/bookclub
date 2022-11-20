@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookclub | Contact Us</title>
+
+    <!-- Bootstrap StyleSheet CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+</head>
+<body>
+      <div th:insert="~{fragments/header :: header}"></div>
+
+      <main>
+            <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                  <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">About the Book Club</h1>
+                        <p class="lead text-mutedt">
+                              </br>
+                              The book club was established in Aug 2022 to encourage everyone to
+                              read books again. The idea is to motivate individuals to read by 
+                              having a group of other readers to read along with them.
+                              </br></br>
+                              On the last week of every month, each Top Ten books' reading group
+                              will discuss the reading on an open forum. Have fun reading!
+                        </p>
+                  </div>
+            </div></section>
+      </main>
+
+      <div th:insert="~{fragments/footer :: footer}"></div>
+      <div th:insert="~{fragments/scriptFooter :: scriptFooter}"></div>
+</body>
+</html>
